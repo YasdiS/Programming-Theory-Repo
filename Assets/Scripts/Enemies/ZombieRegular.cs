@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ZombieRegular : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        FollowPlayer();
+        LookAtPlayer();
+    }
+
+    public override void FollowPlayer()
+    {
+        distanceEnemy = 5.0f;
+        base.FollowPlayer();
     }
 }
