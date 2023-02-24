@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5629071190788491289}
   - component: {fileID: 5629071190788491288}
   - component: {fileID: 5629071190788491291}
-  - component: {fileID: 5603049071470928700}
   - component: {fileID: 4988193370831705465}
+  - component: {fileID: 1687866320131277702}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,23 +94,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5629071190788491290}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5603049071470928700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5629071190788491290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b219b71152f4854ba46c3cbcb6c2c00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &4988193370831705465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +115,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1687866320131277702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5629071190788491290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148ad36894342de46ac039f7c276f00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

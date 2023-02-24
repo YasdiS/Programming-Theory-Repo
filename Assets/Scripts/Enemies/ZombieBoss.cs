@@ -12,7 +12,7 @@ public class ZombieBoss : Enemy
 
     public override void FollowPlayer()
     {
-        distanceEnemy = 5.0f;
+        distanceEnemy = 0.0f;
         base.FollowPlayer();
     }
 }

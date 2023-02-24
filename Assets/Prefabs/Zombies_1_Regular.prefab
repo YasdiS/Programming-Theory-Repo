@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7411038674560041133}
   m_Layer: 0
   m_Name: Zombies_1_Regular
-  m_TagString: Enemy
+  m_TagString: Zombie_1_Regular
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +94,8 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8155294811021356384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 13400000, guid: cfca97fa7d6944245a2f5b40b6549063, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Zombie_1_Regular
+  - Zombie_2_Shooter
+  - Zombie_3_Tanker
+  - Zombie_4_Boss
+  - Projectile_Enemy
   layers:
   - Default
   - TransparentFX

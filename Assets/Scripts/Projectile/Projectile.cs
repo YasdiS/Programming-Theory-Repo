@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private float speed = 40.0f;
+    protected float speed = 40.0f;
 
     //Range position of projectile
-    private float posX;
-    private float posMinusX;
-    private float posZ;
-    private float posMinusZ;
+    protected float posX;
+    protected float posMinusX;
+    protected float posZ;
+    protected float posMinusZ;
 
-    void Start()
+    protected void ProjectileRange()
     {
         posX = transform.position.x + 20.0f;
         posMinusX = transform.position.x - 20.0f;
@@ -20,16 +20,14 @@ public class Projectile : MonoBehaviour
         posMinusZ = transform.position.z - 20.0f;
     }
 
-    void Update()
+    protected void ProjectileMovement()
     {
-        //Projectile Movement
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-        OutofBounds();
     }
 
     //If projectile hit enemy
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -39,7 +37,7 @@ public class Projectile : MonoBehaviour
     }
 
     //limit range for projectile
-    private void OutofBounds()
+    protected void OutofBounds()
     {
         if (transform.position.x > posX)
         {

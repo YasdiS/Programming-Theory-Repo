@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7101451557807995056}
   m_Layer: 0
   m_Name: Zombies_2_Shooter
-  m_TagString: Enemy
+  m_TagString: Zombie_2_Shooter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +94,8 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5613900039509585913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_Material: {fileID: 13400000, guid: cfca97fa7d6944245a2f5b40b6549063, type: 2}
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -113,7 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f84b1c7a40806f4eb03bb2611a94c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
+  projectileEnemy: {fileID: 6952302695428157363, guid: 3ccc6916b5268bb49a50c57e54e915ce, type: 3}
 --- !u!54 &7101451557807995056
 Rigidbody:
   m_ObjectHideFlags: 0

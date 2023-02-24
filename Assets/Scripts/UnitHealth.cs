@@ -31,10 +31,10 @@ public class UnitHealth
         }
     }
 
-    void Start()
+    public UnitHealth (int health, int maxHealth)
     {
-        currentHealth = Health;
-        currentMaxHealth = MaxHealth;
+        currentHealth = health;
+        currentMaxHealth = maxHealth;
     }
 
     public void DamageUnit(int damageAmount)
@@ -42,6 +42,10 @@ public class UnitHealth
         if (currentHealth > 0)
         {
             currentHealth -= damageAmount;
+        }
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
         }
     }
 
