@@ -12,7 +12,7 @@ public class ZombieTanker : Enemy
 
     public override void FollowPlayer()
     {
-        distanceEnemy = 3.0f;
+        distanceEnemy = 2.0f;
         base.FollowPlayer();
     }
 }

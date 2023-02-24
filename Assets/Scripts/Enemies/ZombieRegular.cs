@@ -13,7 +13,7 @@ public class ZombieRegular : Enemy
 
     public override void FollowPlayer()
     {
-        distanceEnemy = 5.0f;
+        distanceEnemy = 2.0f;
         base.FollowPlayer();
     }
 }
