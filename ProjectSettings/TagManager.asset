@@ -10,6 +10,7 @@ TagManager:
   - Zombie_3_Tanker
   - Zombie_4_Boss
   - Projectile_Enemy
+  - Projectile_Player
   layers:
   - Default
   - TransparentFX

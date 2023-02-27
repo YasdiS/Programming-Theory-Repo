@@ -21,22 +21,18 @@ public class ProjectilePlayer : Projectile
         if (other.gameObject.CompareTag("Zombie_1_Regular"))
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Zombie_2_Shooter"))
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Zombie_3_Tanker"))
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Zombie_4_Boss"))
         {
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
     }
 }

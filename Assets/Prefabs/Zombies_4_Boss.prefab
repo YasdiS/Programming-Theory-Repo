@@ -114,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isBoss: 1
+  spawnInterval: 3
+  miniEnemySpawnCount: 0
 --- !u!54 &4141356771531690983
 Rigidbody:
   m_ObjectHideFlags: 0

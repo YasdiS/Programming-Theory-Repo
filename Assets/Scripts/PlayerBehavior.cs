@@ -11,6 +11,11 @@ public class PlayerBehavior : MonoBehaviour
             PlayerHealing(50);
             Debug.Log("Player get healing: " + GameManager.Instance.playerHealth.Health);
         }
+
+        if (GameManager.Instance.playerHealth.Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,20 +25,24 @@ public class PlayerBehavior : MonoBehaviour
             PlayerTakeDamage(10);
             Debug.Log("Player get damage from Regular: " + GameManager.Instance.playerHealth.Health);
         }
-        else if (collision.gameObject.CompareTag("Projectile_Enemy"))
-        {
-            PlayerTakeDamage(5);
-            Debug.Log("Player get damage from Regular: " + GameManager.Instance.playerHealth.Health);
-        }
         else if (collision.gameObject.CompareTag("Zombie_3_Tanker"))
         {
             PlayerTakeDamage(15);
-            Debug.Log("Player get damage from Regular: " + GameManager.Instance.playerHealth.Health);
+            Debug.Log("Player get damage from Tanker: " + GameManager.Instance.playerHealth.Health);
         }
         else if (collision.gameObject.CompareTag("Zombie_4_Boss"))
         {
             PlayerTakeDamage(50);
-            Debug.Log("Player get damage from Regular: " + GameManager.Instance.playerHealth.Health);
+            Debug.Log("Player get damage from Boss: " + GameManager.Instance.playerHealth.Health);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Projectile_Enemy"))
+        {
+            PlayerTakeDamage(5);
+            Debug.Log("Player get damage from Shooter: " + GameManager.Instance.playerHealth.Health);
         }
     }
 

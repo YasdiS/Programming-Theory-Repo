@@ -23,7 +23,6 @@ public class Projectile : MonoBehaviour
     protected void ProjectileMovement()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
     }
 
     //If projectile hit enemy
