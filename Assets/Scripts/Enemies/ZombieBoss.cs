@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//INHERITANCE FROM CLASS ENEMY
 public class ZombieBoss : Enemy
 {
     private UnitHealth bossHealth = new UnitHealth(1000, 1000);
 
     void Update()
     {
+        //ABSTRACTION
         FollowPlayer();
         LookAtPlayer();
         SpawnBossInterval();
     }
 
+    //POLYMORPHISM
     protected override void FollowPlayer()
     {
         distanceEnemy = 0.0f;
@@ -35,6 +39,7 @@ public class ZombieBoss : Enemy
         if (bossHealth.Health <= 0)
         {
             Destroy(gameObject);
+            mainManager.UpdateScore(pointValue);
         }
     }
 }

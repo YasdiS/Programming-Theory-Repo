@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+//INHERITANCE FROM CLASS ENEMY
 public class ZombieRegular : Enemy
 {
     private UnitHealth regularHealth = new UnitHealth(100, 100);
     
     void Update()
     {
+        //ABSTRACTION
         FollowPlayer();
         LookAtPlayer();
     }
 
+    //POLYMORPHISM
     protected override void FollowPlayer()
     {
         distanceEnemy = 0.0f;
@@ -35,6 +38,7 @@ public class ZombieRegular : Enemy
         if (regularHealth.Health <= 0)
         {
             Destroy(gameObject);
+            mainManager.UpdateScore(pointValue);
         }
     }
 }

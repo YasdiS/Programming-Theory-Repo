@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//INHERITANCE FROM CLASS ENEMY
 public class ZombieTanker : Enemy
 {
     private UnitHealth tankerHealth = new UnitHealth(250, 250);
     
     void Update()
     {
+        //ABSTRACTION
         FollowPlayer();
         LookAtPlayer();
     }
 
+    //POLYMORPHISM
     protected override void FollowPlayer()
     {
         distanceEnemy = 0.0f;
@@ -34,6 +37,7 @@ public class ZombieTanker : Enemy
         if (tankerHealth.Health <= 0)
         {
             Destroy(gameObject);
+            mainManager.UpdateScore(pointValue);
         }
     }
 }

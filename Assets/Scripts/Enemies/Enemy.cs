@@ -5,27 +5,28 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] protected float speed = 5.0f;
+    [SerializeField] protected bool isBoss = false;
+    [SerializeField] protected float spawnInterval;
 
     protected Rigidbody enemyRb;
     protected GameObject player;
-    
     protected float distance;
     protected float distanceEnemy;
-
-    [SerializeField] protected bool isBoss = false;
-
-    [SerializeField] protected float spawnInterval;
     protected float nextSpawn;
-
-    public int miniEnemySpawnCount;
-
     protected SpawnManager spawnManager;
+    protected MainManager mainManager;
+
+    public int pointValue;
+    public int miniEnemySpawnCount;
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+        mainManager = GameObject.Find("Main Manager").GetComponent<MainManager>();
 
+
+        //check if wave turn for boss
         if (isBoss)
         {
             spawnManager = FindObjectOfType<SpawnManager>();
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Enemy Follow The Player
+    //POLYMORPHISM
     protected virtual void FollowPlayer()
     {
         distance = Vector3.Distance(player.transform.position, transform.position);
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Enemy Look at Player
+    //ABSTRACTION
     protected void LookAtPlayer()
     {
         Vector3 lookVector = player.transform.position - transform.position;
@@ -56,6 +59,8 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
     }
 
+    //While boss appear, other enemies will spawn continuously until boss defeated
+    //ABSTRACTION
     protected void SpawnBossInterval()
     {
         if (isBoss)

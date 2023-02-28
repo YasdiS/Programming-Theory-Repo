@@ -7,15 +7,14 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject[] enemy;
     [SerializeField] GameObject[] miniEnemy;
     [SerializeField] GameObject bossEnemy;
-
     [SerializeField] float spawnRange = 20.0f;
-
     [SerializeField] int enemyCount;
     [SerializeField] int waveNumber;
     [SerializeField] int bossRound;
 
     void Start()
     {
+        //ABSTRACTION
         SpawnEnemyWave(waveNumber);
     }
 
@@ -27,15 +26,18 @@ public class SpawnManager : MonoBehaviour
             waveNumber++;
             if (waveNumber % bossRound == 0)
             {
+                //ABSTRACTION
                 SpawnBossWave(waveNumber);
             }
             else
             {
+                //ABSTRACTION
                 SpawnEnemyWave(waveNumber);
             }
         }
     }
 
+    //ABSTRACTION
     void SpawnBossWave(int currentRound)
     {
         int miniEnemyToSpawn;
@@ -63,6 +65,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    //ABSTRACTION
     void SpawnEnemyWave(int enemyToSpawn)
     {
         for (int i = 0; i < enemyToSpawn; i++)
@@ -73,6 +76,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    //ABSTRACTION
     private Vector3 GenerateRandomPosition()
     {
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
@@ -83,6 +87,7 @@ public class SpawnManager : MonoBehaviour
         return spawnPos;
     }
 
+    //ABSTRACTION
     private Vector3 GenerateBossRandomPosition()
     {
         float spawnPosX = Random.Range(-spawnRange, spawnRange);

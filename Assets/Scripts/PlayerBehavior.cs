@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+    private MainManager mainManager;
+
+    void Start()
+    {
+        mainManager = GameObject.Find("Main Manager").GetComponent<MainManager>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
@@ -14,7 +21,8 @@ public class PlayerBehavior : MonoBehaviour
 
         if (GameManager.Instance.playerHealth.Health <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            mainManager.GameOver();
         }
     }
 
@@ -34,6 +42,17 @@ public class PlayerBehavior : MonoBehaviour
         {
             PlayerTakeDamage(50);
             Debug.Log("Player get damage from Boss: " + GameManager.Instance.playerHealth.Health);
+        }
+
+        if (collision.gameObject.CompareTag("Zombie_1_Regular") || collision.gameObject.CompareTag("Zombie_3_Tanker") || collision.gameObject.CompareTag("Zombie_4_Boss"))
+        {
+            Rigidbody enemyRb = collision.gameObject.GetComponent<Rigidbody>();
+
+            Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
+
+            Debug.Log("Collided with: " + collision.gameObject.name);
+
+            enemyRb.AddForce(awayFromPlayer * 50.0f, ForceMode.Impulse);
         }
     }
 

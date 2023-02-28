@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEditor;
 using UnityEngine;
 
+//INHERITANCE FROM CLASS ENEMY
 public class ZombieShooter : Enemy
 {
     [SerializeField] GameObject projectileEnemy;
@@ -13,10 +14,12 @@ public class ZombieShooter : Enemy
 
     void Update()
     {
+        //ABSTRACTION
         FollowPlayer();
         LookAtPlayer();
     }
 
+    //POLYMORPHISM
     protected override void FollowPlayer()
     {
         distanceEnemy = 15.0f;
@@ -60,6 +63,7 @@ public class ZombieShooter : Enemy
         if (shooterHealth.Health <= 0)
         {
             Destroy(gameObject);
+            mainManager.UpdateScore(pointValue);
         }
     }
 }

@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     protected float posZ;
     protected float posMinusZ;
 
+    //ABSTRACTION
     protected void ProjectileRange()
     {
         posX = transform.position.x + 20.0f;
@@ -20,12 +21,14 @@ public class Projectile : MonoBehaviour
         posMinusZ = transform.position.z - 20.0f;
     }
 
+    //ABSTRACTION
     protected void ProjectileMovement()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     //If projectile hit enemy
+    //POLYMORPHISM
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -36,6 +39,7 @@ public class Projectile : MonoBehaviour
     }
 
     //limit range for projectile
+    //ABSTRACTION
     protected void OutofBounds()
     {
         if (transform.position.x > posX)

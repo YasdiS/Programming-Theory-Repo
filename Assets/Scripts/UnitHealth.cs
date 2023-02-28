@@ -7,6 +7,7 @@ public class UnitHealth
     private int currentHealth;
     private int currentMaxHealth;
 
+    //ENCAPSULATION
     public int Health
     {
         get
@@ -19,6 +20,8 @@ public class UnitHealth
         }
     }
 
+
+    //ENCAPSULATION
     public int MaxHealth
     {
         get 
